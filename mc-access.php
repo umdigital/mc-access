@@ -3,7 +3,7 @@
  * Plugin Name: MC Access
  * Plugin URI: https://github.com/umichcreative/mc-access/
  * Description: Add content access functionality
- * Version: 1.0
+ * Version: 1.0.1
  * Author: U-M: Michigan Creative
  * Author URI: http://creative.umich.edu
  */
@@ -95,7 +95,7 @@ class MCAccess {
         add_action( 'wp', function(){
             global $post;
 
-            $mcAccess = get_post_meta( $post->ID, '_mcaccess', true );
+            $mcAccess = get_post_meta( @$post->ID, '_mcaccess', true );
 
             switch( $mcAccess ) {
                 case 'auth':
